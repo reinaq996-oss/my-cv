@@ -117,6 +117,7 @@ header {
 
 .header-titles {
   flex: 1;
+  padding-top: 1.5rem;
 }
 
 header .tagline {
