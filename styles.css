@@ -252,6 +252,37 @@ section h2 {
   border-color: var(--color-accent);
 }
 
+.subheading {
+  margin-top: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+
+.lang-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.lang-list li.card {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.lang-list li.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(181, 107, 224, 0.3);
+  border-color: var(--color-accent);
+}
+
 .about-card {
   padding: 2.5rem 2.6rem;
 }
