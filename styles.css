@@ -264,21 +264,32 @@ section h2 {
 
 .lang-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
 .lang-list li.card {
   background-color: var(--color-primary-light);
-  color: var(--color-primary);
-  padding: 0.7rem 1.4rem;
-  border-radius: 999px;
-  font-size: 1.05rem;
-  font-weight: 600;
+  color: var(--color-text);
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  padding-left: 2.2rem;
+}
+
+.lang-list li.card::before {
+  content: "•";
+  position: absolute;
+  left: 1rem;
+  color: var(--color-accent);
+  font-size: 1.6rem;
+  line-height: 1;
 }
 
 .lang-list li.card:hover {
-  transform: translateY(-4px);
+  transform: translateX(6px);
   box-shadow: 0 6px 18px rgba(181, 107, 224, 0.3);
   border-color: var(--color-accent);
 }
