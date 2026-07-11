@@ -25,9 +25,9 @@ a {
    Color scheme
    ========================================================================== */
 :root {
-  --color-bg: #f5f2fa;
-  --color-surface: #ffffff;
-  --color-card: #ffffff;
+  --color-bg: #e4d6f5;
+  --color-surface: #f6f0fb;
+  --color-card: #f8f2fc;
   --color-text: #2b2733;
   --color-text-muted: #6e6579;
   --color-primary: #6a3fa0;
@@ -35,13 +35,13 @@ a {
   --color-primary-light: #efe4fa;
   --color-accent: #c084e0;
   --color-glow: #b56be0;
-  --border-color: #e6dbf2;
+  --border-color: #d9c3ee;
 }
 
 body.dark-mode {
-  --color-bg: #15101c;
-  --color-surface: #201829;
-  --color-card: #241c30;
+  --color-bg: #100b18;
+  --color-surface: #241c30;
+  --color-card: #2c2238;
   --color-text: #f1eaf7;
   --color-text-muted: #b7abc4;
   --color-primary: #cf9cf2;
@@ -130,7 +130,7 @@ header .tagline {
 header h1 {
   font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
   font-weight: 200;
-  font-size: 3rem;
+  font-size: 3.8rem;
   letter-spacing: 0.06em;
   color: var(--color-primary-dark);
   text-transform: uppercase;
@@ -160,25 +160,25 @@ header h1 {
 }
 
 .nav-row {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.32);
   border-radius: 10px;
-  padding: 0.6rem 1rem;
+  padding: 0.85rem 1.4rem;
   display: inline-block;
-  margin: 1.25rem auto 0.75rem;
+  margin: 2rem auto 0.75rem;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 nav a {
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 6px;
   border-bottom: 2px solid transparent;
   transition: box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
@@ -247,6 +247,16 @@ section h2 {
 }
 
 .entry.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(181, 107, 224, 0.28);
+  border-color: var(--color-accent);
+}
+
+.about-card {
+  padding: 1.6rem 1.8rem;
+}
+
+.about-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(181, 107, 224, 0.28);
   border-color: var(--color-accent);
