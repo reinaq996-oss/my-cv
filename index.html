@@ -6,17 +6,20 @@
   <title>Reina Qose — CV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header>
     <div class="header-top">
-      <h1>Reina Qose</h1>
+      <span class="spacer"></span>
+      <div class="header-titles">
+        <p class="tagline">Computer Engineering Student · Aspiring Web Developer</p>
+        <h1>Reina Qose</h1>
+      </div>
       <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </div>
-    <p class="tagline">Computer Engineering Student · Aspiring Web Developer</p>
     <div class="nav-row">
       <nav>
         <a href="#about">About</a>
@@ -31,7 +34,6 @@
 
   <section id="about" class="fade-in">
     <h2>About</h2>
-    <img src="photo.jpg" alt="Reina Qose" class="profile-pic">
     <p>
       I'm a first-year Computer Engineering student, still figuring out which parts of tech I like best.
       Lately I've been curious about physics and how it connects to the way things actually work under the hood.
@@ -47,7 +49,7 @@
   <section id="experience" class="fade-in">
     <h2>Experience</h2>
 
-    <div class="entry">
+    <div class="entry card">
       <h3>my-cv — Personal Portfolio Website</h3>
       <p>
         The site you're looking at right now. Built from scratch with HTML, CSS, and JavaScript, including a
@@ -56,7 +58,7 @@
       </p>
     </div>
 
-    <div class="entry">
+    <div class="entry card">
       <h3>Tirana Scout — Personal Project</h3>
       <p>
         A Python project that models apartment listings in Tirana, with features like filtering by price
@@ -64,7 +66,7 @@
       </p>
     </div>
 
-    <div class="entry">
+    <div class="entry card">
       <h3>Course Project — Teknikat dhe Gjuhët e Programimit</h3>
       <p>
         A hands-on project developed for the Programming Techniques and Languages course during my first year,
@@ -75,11 +77,11 @@
 
   <section id="education" class="fade-in">
     <h2>Education</h2>
-    <div class="entry">
+    <div class="entry card">
       <h3>Computer Engineering — Year 1 (completed)</h3>
       <p>Successfully completed my first year of studies in Computer Engineering.</p>
     </div>
-    <div class="entry">
+    <div class="entry card">
       <h3>Italian Language</h3>
       <p>Studied Italian as part of my language education.</p>
     </div>
@@ -88,21 +90,21 @@
   <section id="skills" class="fade-in">
     <h2>Skills</h2>
     <ul>
-      <li>Python</li>
-      <li>Git &amp; GitHub</li>
-      <li>HTML &amp; CSS</li>
-      <li>JavaScript</li>
-      <li>Italian (language)</li>
-      <li>Problem solving</li>
-      <li>Fast learner</li>
+      <li class="card">Python</li>
+      <li class="card">Git &amp; GitHub</li>
+      <li class="card">HTML &amp; CSS</li>
+      <li class="card">JavaScript</li>
+      <li class="card">Italian (language)</li>
+      <li class="card">Problem solving</li>
+      <li class="card">Fast learner</li>
     </ul>
   </section>
 
   <section id="contact" class="fade-in">
     <h2>Contact</h2>
     <ul>
-      <li>Email: <a href="mailto:qosereina6@gmail.com">qosereina6@gmail.com</a></li>
-      <li>GitHub: <a href="https://github.com/" target="_blank" rel="noopener">github.com/your-username</a></li>
+      <li class="card">Email: <a href="mailto:qosereina6@gmail.com">qosereina6@gmail.com</a></li>
+      <li class="card">GitHub: <a href="https://github.com/" target="_blank" rel="noopener">github.com/your-username</a></li>
     </ul>
   </section>
 
