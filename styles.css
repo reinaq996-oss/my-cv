@@ -22,32 +22,30 @@ a {
 }
 
 /* ==========================================================================
-   Color scheme & base typography
+   Color scheme — lilac
    ========================================================================== */
 :root {
-  --color-bg: #faf8f5;
+  --color-bg: #f8f5fb;
   --color-surface: #ffffff;
-  --color-text: #2e2a26;
-  --color-text-muted: #6b6560;
-  --color-primary: #3a6b63;   /* deep teal-green — headings, accents */
-  --color-primary-light: #e4eeec;
-  --color-accent: #c98a4b;    /* warm ochre — links, highlights */
-  --border-color: #e4dfd8;
+  --color-text: #2b2733;
+  --color-text-muted: #6e6579;
+  --color-primary: #7c4fb0;     /* lilac / purple — headings, header */
+  --color-primary-light: #efe4fa;
+  --color-accent: #c084e0;      /* lighter lilac — links, glow */
+  --color-glow: #b56be0;
+  --border-color: #e6dbf2;
 }
 
 body.dark-mode {
-  --color-bg: #1e2422;
-  --color-surface: #262e2b;
-  --color-text: #ece8e2;
-  --color-text-muted: #a9a39b;
-  --color-primary: #7fbcae;
-  --color-primary-light: #2c3b37;
-  --color-accent: #e0a869;
-  --border-color: #364440;
-}
-
-body {
-  transition: background-color 0.25s ease, color 0.25s ease;
+  --color-bg: #1b1621;
+  --color-surface: #241d2b;
+  --color-text: #f1eaf7;
+  --color-text-muted: #b7abc4;
+  --color-primary: #b489e0;
+  --color-primary-light: #33263d;
+  --color-accent: #d6a8f0;
+  --color-glow: #c88bf0;
+  --border-color: #3a2d47;
 }
 
 body {
@@ -56,6 +54,7 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   font-size: 16px;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 h1, h2, h3 {
@@ -78,15 +77,20 @@ h3 {
 p {
   color: var(--color-text);
   max-width: 65ch;
+  margin-bottom: 0.75rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
    Layout
    ========================================================================== */
 header {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), #5a3688);
   color: #fff;
-  padding: 2rem 1.5rem 2rem;
+  padding: 2.5rem 1.5rem 2rem;
   text-align: center;
   transition: background-color 0.25s ease;
 }
@@ -110,17 +114,20 @@ header {
   font-size: 1.1rem;
   cursor: pointer;
   color: #fff;
-  transition: background-color 0.15s ease, transform 0.15s ease;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 #theme-toggle:hover {
   background: rgba(255, 255, 255, 0.28);
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 0 14px 4px var(--color-glow);
 }
 
 header h1 {
   color: #fff;
-  font-size: 2.4rem;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   margin-bottom: 0.4rem;
 }
 
@@ -143,14 +150,16 @@ nav a {
   color: #fff;
   font-size: 0.95rem;
   font-weight: 600;
-  padding-bottom: 3px;
+  padding: 4px 10px;
+  border-radius: 6px;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease, opacity 0.2s ease;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 nav a:hover {
   border-bottom-color: var(--color-accent);
-  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 12px 2px var(--color-glow);
 }
 
 .pdf-link {
@@ -158,10 +167,14 @@ nav a:hover {
   font-size: 0.85rem;
   color: var(--color-primary-light);
   border-bottom: 1px dotted currentColor;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .pdf-link:hover {
   color: #fff;
+  box-shadow: 0 0 10px 2px var(--color-glow);
 }
 
 section {
@@ -199,7 +212,7 @@ section .entry:last-child {
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid var(--color-surface);
-  box-shadow: 0 4px 14px rgba(46, 42, 38, 0.18);
+  box-shadow: 0 4px 14px rgba(124, 79, 176, 0.35);
   margin: 0 auto 1.5rem;
 }
 
@@ -219,6 +232,12 @@ section .entry:last-child {
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 600;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+#skills li:hover {
+  box-shadow: 0 0 10px 2px var(--color-glow);
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -231,11 +250,14 @@ section .entry:last-child {
 #contact a {
   color: var(--color-accent);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.15s ease;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 #contact a:hover {
   border-bottom-color: var(--color-accent);
+  box-shadow: 0 0 8px 2px var(--color-glow);
 }
 
 /* ==========================================================================
@@ -261,7 +283,7 @@ section .entry:last-child {
   }
 
   header h1 {
-    font-size: 1.7rem;
+    font-size: 2.1rem;
   }
 
   #theme-toggle {
@@ -313,7 +335,7 @@ section .entry:last-child {
 
   body.dark-mode {
     --color-bg: #ffffff;
-    --color-text: #2e2a26;
+    --color-text: #2b2733;
   }
 
   .fade-in {
