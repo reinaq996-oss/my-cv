@@ -35,6 +35,21 @@ a {
   --border-color: #e4dfd8;
 }
 
+body.dark-mode {
+  --color-bg: #1e2422;
+  --color-surface: #262e2b;
+  --color-text: #ece8e2;
+  --color-text-muted: #a9a39b;
+  --color-primary: #7fbcae;
+  --color-primary-light: #2c3b37;
+  --color-accent: #e0a869;
+  --border-color: #364440;
+}
+
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
 body {
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   background-color: var(--color-bg);
@@ -71,8 +86,36 @@ p {
 header {
   background-color: var(--color-primary);
   color: #fff;
-  padding: 3rem 1.5rem 2.5rem;
+  padding: 2rem 1.5rem 2rem;
   text-align: center;
+  transition: background-color 0.25s ease;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+#theme-toggle {
+  position: absolute;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+#theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.05);
 }
 
 header h1 {
@@ -85,6 +128,40 @@ header .tagline {
   color: var(--color-primary-light);
   font-size: 1.05rem;
   font-style: italic;
+  margin-bottom: 1.25rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+nav a {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+nav a:hover {
+  border-bottom-color: var(--color-accent);
+  opacity: 0.9;
+}
+
+.pdf-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--color-primary-light);
+  border-bottom: 1px dotted currentColor;
+}
+
+.pdf-link:hover {
+  color: #fff;
 }
 
 section {
@@ -162,18 +239,89 @@ section .entry:last-child {
 }
 
 /* ==========================================================================
+   Scroll fade-in animation
+   ========================================================================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 480px) {
   header {
-    padding: 2.5rem 1rem 2rem;
+    padding: 1.75rem 1rem 1.5rem;
   }
 
   header h1 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
+  }
+
+  #theme-toggle {
+    position: static;
+    margin-top: 0.75rem;
+  }
+
+  .header-top {
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 0.75rem 1rem;
+    font-size: 0.85rem;
   }
 
   section {
-    padding: 2rem 1.25rem;
+    padding: 1.75rem 1.1rem;
+  }
+
+  section h2 {
+    font-size: 1.3rem;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  #skills ul {
+    gap: 0.4rem;
+  }
+
+  #skills li {
+    font-size: 0.82rem;
+    padding: 0.35rem 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   Print (Download as PDF)
+   ========================================================================== */
+@media print {
+  #theme-toggle,
+  nav,
+  .pdf-link {
+    display: none;
+  }
+
+  body.dark-mode {
+    --color-bg: #ffffff;
+    --color-text: #2e2a26;
+  }
+
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  section {
+    border-bottom: none;
   }
 }
