@@ -132,7 +132,7 @@ header h1 {
   font-weight: 200;
   font-size: 3.8rem;
   letter-spacing: 0.06em;
-  color: var(--color-primary-dark);
+  color: #ffffff;
   text-transform: uppercase;
   text-shadow:
     0 0 8px var(--color-glow),
